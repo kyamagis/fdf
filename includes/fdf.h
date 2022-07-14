@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 12:27:55 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/07/06 16:17:55 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:56:40 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@
 # include "../libft/libft.h"
 //# include <get_next_line.h>
 # include "../gnl/get_next_line.h"
-# include <mlx.h>
+# include "../minilibx_macos/mlx.h"
 # include <stdio.h>
 # include <stdarg.h>
 # include <string.h>

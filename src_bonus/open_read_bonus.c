@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:20:01 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/07/06 17:19:16 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/07/14 13:06:32 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,6 @@ static size_t	count_width(char **split_line)
 
 static void	count_depth_width(char **split_line, t_map_data *m_d)
 {
-	size_t		row;
-
-	row = 0;
 	if (m_d->depth == 0)
 		m_d->width = count_width(split_line);
 	else

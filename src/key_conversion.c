@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 13:36:43 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/07/06 16:19:54 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/07/14 14:33:02 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	view_change(t_map_data *m_d)
 	m_d->x_rad = 0;
 	m_d->y_rad = 0;
 	m_d->z_rad = 0;
+	mlx_destroy_image(m_d->mlx, m_d->img);
 	init(m_d);
 	draw_map(m_d);
 }
@@ -31,6 +32,7 @@ static void	parallel_translation(int keycode, t_map_data *m_d)
 		m_d->right_left += 10;
 	if (keycode == LEFT)
 		m_d->right_left -= 10;
+	mlx_destroy_image(m_d->mlx, m_d->img);
 	init(m_d);
 	draw_map(m_d);
 }
@@ -43,6 +45,7 @@ static void	zoom(int keycode, t_map_data *m_d)
 		return ;
 	if (keycode == ZOOM_OUT)
 		m_d->zoom /= 2;
+	mlx_destroy_image(m_d->mlx, m_d->img);
 	init(m_d);
 	draw_map(m_d);
 }
@@ -61,6 +64,7 @@ static void	rotate_conversion(int keycode, t_map_data *m_d)
 		m_d->z_rad += M_PI / 12;
 	if (keycode == Z_CCLOCKWISE)
 		m_d->z_rad -= M_PI / 12;
+	mlx_destroy_image(m_d->mlx, m_d->img);
 	init(m_d);
 	draw_map(m_d);
 }

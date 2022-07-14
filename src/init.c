@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/01 17:59:41 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/07/06 16:19:51 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/07/14 14:32:52 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	map_data_init(t_map_data *m_d)
 	m_d->y_rad = 0;
 	m_d->z_rad = M_PI_4;
 	m_d->wave = -1;
-	m_d->scan = 0;
+	m_d->scan = -1;
 	m_d->img = mlx_new_image(m_d->mlx, WINDOW_WIDTH, WINDOW_DEPETH);
 	m_d->addr = mlx_get_data_addr(m_d->img, &m_d->bits_per_pixel, \
 								&m_d->line_length, &m_d->endian);
@@ -48,7 +48,7 @@ void	position_init(t_map_data *m_d)
 	m_d->y_rad = 0;
 	m_d->z_rad = M_PI_4;
 	m_d->wave = -1;
-	m_d->scan = 0;
+	m_d->scan = -1;
 	m_d->img = mlx_new_image(m_d->mlx, WINDOW_WIDTH, WINDOW_DEPETH);
 	m_d->addr = mlx_get_data_addr(m_d->img, &m_d->bits_per_pixel, \
 								&m_d->line_length, &m_d->endian);

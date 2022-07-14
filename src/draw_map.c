@@ -6,7 +6,7 @@
 /*   By: kyamagis <kyamagis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:29:35 by kyamagis          #+#    #+#             */
-/*   Updated: 2022/07/06 17:33:17 by kyamagis         ###   ########.fr       */
+/*   Updated: 2022/07/14 14:32:42 by kyamagis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ static void	draw_width(t_map_data *m_d, size_t x, size_t y)
 
 static void	draw_depth(t_map_data *m_d, size_t x, size_t y)
 {
+	if (m_d->scan == (int)y)
+		return ;
 	rotation_move(m_d, x, y, Y);
 	bresenham_start_point(m_d, m_d->colour[y][x]);
 	if (y < m_d->depth - 1)
@@ -68,7 +70,7 @@ void	draw_map(t_map_data *m_d)
 	size_t	y;
 
 	y = 0;
-	while (y < m_d->depth)
+	while (y < m_d->depth && (m_d->scan == -1 || (int)y <= m_d->scan))
 	{
 		x = 0;
 		while (x < m_d->width)
